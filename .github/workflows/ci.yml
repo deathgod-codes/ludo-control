@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, scaffold/** ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-server:
+    name: Test Server
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Install server dependencies
+      working-directory: ./server
+      run: npm install
+    
+    - name: Check server syntax
+      working-directory: ./server
+      run: node -c index.js
+
+  test-android:
+    name: Test Android
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup JDK 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+    
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v2
+    
+    - name: Cache Gradle packages
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+    
+    - name: Grant execute permission for gradlew
+      working-directory: ./android-app
+      run: chmod +x gradlew
+    
+    - name: Run Android unit tests
+      working-directory: ./android-app
+      run: ./gradlew test --no-daemon
+
+  build-admin-panel:
+    name: Build Admin Panel
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Install admin panel dependencies
+      working-directory: ./admin-panel
+      run: npm install
+    
+    - name: Build admin panel
+      working-directory: ./admin-panel
+      run: npm run build

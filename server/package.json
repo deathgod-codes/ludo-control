@@ -1,0 +1,19 @@
+{
+  "name": "ludo-control-server",
+  "version": "1.0.0",
+  "description": "WebSocket server for Ludo control admin panel",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": ["websocket", "ludo", "game"],
+  "author": "deathgod-codes",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.14.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

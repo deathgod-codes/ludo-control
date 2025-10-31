@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ludo Control</string>
+    <string name="welcome">Welcome to Ludo Control</string>
+    <string name="dice_value">🎲</string>
+    <string name="roll_dice">Roll Dice</string>
+    <string name="connect_server">Connect to Server</string>
+</resources>
