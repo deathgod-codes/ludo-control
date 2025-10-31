@@ -1,0 +1,172 @@
+.app {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+header {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.status {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.connected {
+  color: #10b981;
+}
+
+.disconnected {
+  color: #ef4444;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.connection-panel {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 10px;
+}
+
+.connection-panel input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.connection-panel button {
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.connection-panel button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.clients-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clients-section h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.no-clients {
+  color: #6b7280;
+  text-align: center;
+  padding: 40px;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.client-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  background: #f9fafb;
+}
+
+.client-card h3 {
+  margin: 0 0 15px 0;
+  color: #111827;
+  font-size: 16px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.controls button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.controls button:hover {
+  opacity: 0.8;
+}
+
+.btn-roll {
+  background: #10b981;
+  color: white;
+}
+
+.force-control {
+  display: flex;
+  gap: 10px;
+}
+
+.force-control select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-force {
+  flex: 1;
+  background: #f59e0b;
+  color: white;
+}
+
+.security-note {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.security-note h3 {
+  margin: 0 0 10px 0;
+  color: #92400e;
+}
+
+.security-note p {
+  margin: 0;
+  color: #78350f;
+  line-height: 1.5;
+}
